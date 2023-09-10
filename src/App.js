@@ -20,7 +20,7 @@ function App() {
       time: "Programação",
     },
   ]);
-  const [times, setTimes] = useState(defaultValueTimes);
+  const [times, setTimes] = useState([...defaultValueTimes]);
 
   const novoColaborador = (colaborador) => {
     // debugger;
@@ -28,12 +28,14 @@ function App() {
   };
 
   const deletarColaborador = (id) => {
-    setColaboradores(colaboradores.filter(colaborador => colaborador.id !== id))
+    setColaboradores(
+      colaboradores.filter((colaborador) => colaborador.id !== id)
+    );
   };
 
   const mudarCorDoTime = (id, cor) => {
     setTimes(
-      times.map((time, index) => {
+      times.map((time) => {
         if (time.id === id) {
           time.color = cor;
         }
@@ -42,12 +44,18 @@ function App() {
     );
   };
 
+  const cadastrarTime = (novoTime) => {
+    setTimes([...times, { ...novoTime, id: uuidv4() }]);
+  };
+
   return (
     <>
       <div className="App">
         <Banner />
 
         <Formulario
+          cadastrarTime={cadastrarTime}
+          times={times.map(time => time.nome)}
           aoColaborador={(colaborador) => novoColaborador(colaborador)}
         />
 
