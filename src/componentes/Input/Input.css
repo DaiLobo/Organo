@@ -1,0 +1,33 @@
+.field-input {
+    margin: 24px 0;
+}
+
+.field-input label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.field-input input {
+    width: 100%;
+    border: none;
+    padding: 24px;
+    font-size: 16px;
+    background-color: #fff;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.06);
+}
+
+.field-input input:focus-within {
+    border: 2px solid #95FFD4;
+    outline: none;
+}
+
+.field-color input {
+    margin-bottom: 8px;
+    padding: 5px 5px;
+    width: 50px;
+    height: 50px;
+}

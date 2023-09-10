@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 import { Button } from '../Button';
-import { CampoTexto } from '../CampoTexto';
+import { Input } from '../Input';
 import { Select } from '../Select';
 
 export const Formulario = (props) => {
@@ -36,21 +36,21 @@ export const Formulario = (props) => {
     <section className="formulario">
       <form onSubmit={handleSubmit}>
         <h2>Preencha os dados para criar o card do colaborador.</h2>
-        <CampoTexto
+        <Input
           required
           label="Nome"
           value={name}
           setValue={setName}
           placeholder="Digite seu nome"
         />
-        <CampoTexto
+        <Input
           required
           label="Cargo"
           value={cargo}
           setValue={setCargo}
           placeholder="Digite seu cargo"
         />
-        <CampoTexto
+        <Input
           value={imagem}
           setValue={setImagem}
           label="Imagem"
@@ -74,18 +74,19 @@ export const Formulario = (props) => {
         }}
       >
         <h2>Preencha os dados para criar um novo time.</h2>
-        <CampoTexto
+        <Input
           required
           label="Nome"
           value={nomeTime}
-          setValue={value => setNomeTime(value)}
+          setValue={(value) => setNomeTime(value)}
           placeholder="Digite o nome do time"
         />
-        <CampoTexto
+        <Input
           required
           label="Cor"
+          type="color"
           value={corTime}
-          setValue={value => setCorTime(value)}
+          setValue={(value) => setCorTime(value)}
           placeholder="Digite a cor do time"
         />
 
