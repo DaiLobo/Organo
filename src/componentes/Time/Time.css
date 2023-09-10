@@ -1,5 +1,6 @@
 .time {
     text-align: center;
+    position: relative;
     padding: 32px;
     /* background-color: rgba(0, 200, 111, 0.15); */
 }
@@ -40,4 +41,10 @@
     @media (max-width: 600px) {
         padding: 33px 0px;
     }
+}
+
+.input-cor {
+    position: absolute;
+    top: 20px;
+    right: 50px;
 }

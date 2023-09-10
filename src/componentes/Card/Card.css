@@ -1,45 +1,57 @@
 .card {
-    width: 262px;
-    /* height: 272px; */
+  width: 262px;
+  position: relative;
+  /* height: 272px; */
 }
 
 .card .header {
-    height: 91px;
-    background-color:  #F0F0F0;
-    border-radius: 10px 10px 0px 0px;
+  height: 91px;
+  background-color: #f0f0f0;
+  border-radius: 10px 10px 0px 0px;
 }
 .card img {
-    width: 120px;
-    bottom: -50px;
-    border-radius: 50%;
-    position: relative;
+  width: 120px;
+  bottom: -50px;
+  border-radius: 50%;
+  position: relative;
 }
 
 .card .footer {
-    padding-top: 87px;
-    padding-bottom: 27px;
-    background: #FFFFFF;
-    border-radius: 0px 0px 10px 10px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
+  padding-top: 87px;
+  padding-bottom: 27px;
+  background: #ffffff;
+  border-radius: 0px 0px 10px 10px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
 }
 
 .card .footer h4 {
-    margin: 0;
-    font-size: 18px;
-    font-weight: 600;
-    margin-top: 12px;
-    color: #6278F7;
-    margin-bottom: 10px;
-    line-height: normal;
-    font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 12px;
+  color: #6278f7;
+  margin-bottom: 10px;
+  line-height: normal;
+  font-family: "Montserrat", sans-serif;
 }
 
 .card .footer h5 {
-    margin: 0;
-    font-size: 16px;
-    padding: 0 16px;
-    color: #212121;
-    font-weight: 400;
-    line-height: normal;
-    font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  font-size: 16px;
+  padding: 0 16px;
+  color: #212121;
+  font-weight: 400;
+  line-height: normal;
+  font-family: "Montserrat", sans-serif;
+}
+
+.deletar {
+  position: absolute;
+  cursor: pointer;
+  right: -10px;
+  top: -10px;
+}
+
+.favoritar {
+  margin-top: 20px;
 }
