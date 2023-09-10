@@ -2,6 +2,10 @@ import './App.css';
 
 import { useState } from 'react';
 
+import {
+  LuCopyMinus,
+  LuCopyPlus,
+} from 'react-icons/lu';
 import { v4 as uuidv4 } from 'uuid';
 
 import { Banner } from './componentes/Banner';
@@ -12,7 +16,9 @@ import { times as defaultValueTimes } from './mock/times';
 
 function App() {
   const [times, setTimes] = useState([...defaultValueTimes]);
-  const [show, setShow] = useState(false);
+  const [showMessage, setShowMessage] = useState(false);
+  const [showForm, setShowForm] = useState(true);
+
   const [colaboradores, setColaboradores] = useState([
     {
       id: uuidv4(),
@@ -39,9 +45,9 @@ function App() {
     setTimes([...times, { ...novoTime, id: uuidv4() }]);
 
     setTimeout(() => {
-      setShow(false);
+      setShowMessage(false);
     }, [6000]);
-    setShow(true);
+    setShowMessage(true);
   };
 
   const mudarCorDoTime = (id, cor) => {
@@ -71,16 +77,39 @@ function App() {
       <div className="App">
         <Banner />
 
-        <Formulario
-          setShow={setShow}
-          cadastrarTime={cadastrarTime}
-          times={times.map((time) => time.nome)}
-          aoColaborador={(colaborador) => novoColaborador(colaborador)}
-        />
+        {showForm && (
+          <Formulario
+            setShowMessage={setShowMessage}
+            cadastrarTime={cadastrarTime}
+            times={times.map((time) => time.nome)}
+            aoColaborador={(colaborador) => novoColaborador(colaborador)}
+          />
+        )}
 
         {colaboradores?.length > 0 && (
-          <section className="title">
-            <h2>Minha Organização:</h2>
+          <section>
+            <div className="title">
+              <h2>Minha Organização:</h2>
+              <button
+                className="show_hide"
+                onClick={() => setShowForm(!showForm)}
+              >
+                {showForm ? (
+                  <LuCopyMinus
+                    size={48}
+                    color="#fff"
+                    style={{ justifyContent: "center" }}
+                  />
+                ) : (
+                  <LuCopyPlus
+                    size={48}
+                    color="#fff"
+                    style={{ justifyContent: "center" }}
+                  />
+                )}
+              </button>
+            </div>
+
             <section className="line">
               <div></div>
             </section>
@@ -104,7 +133,7 @@ function App() {
         ))}
       </div>
 
-      <div className={`${show ? "show" : ""}`} id="snackbar">
+      <div className={`${showMessage ? "show" : ""}`} id="snackbar">
         Cadastrado com sucesso!
       </div>
       <Footer />
