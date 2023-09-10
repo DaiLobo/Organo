@@ -16,7 +16,7 @@ function App() {
     {
       id: uuidv4(),
       name: "Diana Rose",
-      cargo: "FullStack",
+      cargo: "Desenvolvedora FullStack",
       imagem: "https://github.com/DaiLobo.png",
       time: "Programação",
       favorito: false,
