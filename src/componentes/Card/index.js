@@ -2,11 +2,22 @@ import './Card.css';
 
 import { AiFillCloseSquare } from 'react-icons/ai';
 
-export const Card = ({ id, nome, cargo, imagem, backgroundColor, aoDeletar }) => {
+export const Card = ({
+  id,
+  nome,
+  cargo,
+  imagem,
+  backgroundColor,
+  aoDeletar,
+}) => {
   return (
     <div className="card">
       {/* <FaRegWindowClose className="deletar" onClick={aoDeletar} /> */}
-      <AiFillCloseSquare size={24} className="deletar" onClick={aoDeletar(id)} />
+      <AiFillCloseSquare
+        size={24}
+        className="deletar"
+        onClick={() => aoDeletar(id)}
+      />
 
       <div className="header" style={{ backgroundColor: backgroundColor }}>
         {/* Pode fazer uma validação na imagem para ver se a string termina com .png, .jpeg, etc */}
