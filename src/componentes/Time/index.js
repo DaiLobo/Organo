@@ -40,8 +40,10 @@ export const Time = (props) => {
                   nome={colaborador.name}
                   cargo={colaborador.cargo}
                   imagem={colaborador.imagem}
+                  favorito={colaborador.favorito}
                   aoDeletar={props.aoDeletar}
                   backgroundColor={props.color}
+                  aoFavoritar={props.aoFavoritar}
                 />
               );
             })}

@@ -11,6 +11,7 @@ import { Time } from './componentes/Time';
 import { times as defaultValueTimes } from './mock/times';
 
 function App() {
+  const [times, setTimes] = useState([...defaultValueTimes]);
   const [colaboradores, setColaboradores] = useState([
     {
       id: uuidv4(),
@@ -18,9 +19,9 @@ function App() {
       cargo: "FullStack",
       imagem: "https://github.com/DaiLobo.png",
       time: "Programação",
+      favorito: false,
     },
   ]);
-  const [times, setTimes] = useState([...defaultValueTimes]);
 
   const novoColaborador = (colaborador) => {
     // debugger;
@@ -31,6 +32,10 @@ function App() {
     setColaboradores(
       colaboradores.filter((colaborador) => colaborador.id !== id)
     );
+  };
+
+  const cadastrarTime = (novoTime) => {
+    setTimes([...times, { ...novoTime, id: uuidv4() }]);
   };
 
   const mudarCorDoTime = (id, cor) => {
@@ -44,8 +49,15 @@ function App() {
     );
   };
 
-  const cadastrarTime = (novoTime) => {
-    setTimes([...times, { ...novoTime, id: uuidv4() }]);
+  const resolverFavorito = (id) => {
+    setColaboradores(
+      colaboradores.map((colaborador) => {
+        if (colaborador.id === id) {
+          colaborador.favorito = !colaborador.favorito;
+        }
+        return colaborador;
+      })
+    );
   };
 
   return (
@@ -55,9 +67,9 @@ function App() {
 
         <Formulario
           cadastrarTime={cadastrarTime}
-          times={times.map(time => time.nome)}
+          times={times.map((time) => time.nome)}
           aoColaborador={(colaborador) => novoColaborador(colaborador)}
-        />
+          />
 
         {colaboradores?.length > 0 && (
           <section className="title">
@@ -70,16 +82,17 @@ function App() {
 
         {times?.map((time, index) => (
           <Time
-            key={index}
-            id={time.id}
-            nomeTime={time.nome}
-            // primaryColor={time.primaryColor}
-            color={time.color}
-            colaboradores={colaboradores?.filter(
-              (colaborador) => colaborador.time === time.nome
+          key={index}
+          id={time.id}
+          nomeTime={time.nome}
+          // primaryColor={time.primaryColor}
+          color={time.color}
+          colaboradores={colaboradores?.filter(
+            (colaborador) => colaborador.time === time.nome
             )}
             aoDeletar={deletarColaborador}
             mudarCor={mudarCorDoTime}
+            aoFavoritar={resolverFavorito}
           />
         ))}
       </div>
