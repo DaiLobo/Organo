@@ -44,10 +44,10 @@ export const Formulario = (props) => {
     setTime("");
 
     setTimeout(() => {
-      props.setShow(false);
+      props.setShowMessage(false);
     }, [6000]);
 
-    props.setShow(true);
+    props.setShowMessage(true);
   };
 
   return (
