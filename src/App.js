@@ -1,28 +1,47 @@
-import { useState } from "react";
-import { Banner } from "./componentes/Banner";
-import { Formulario } from "./componentes/Formulario";
-import { Time } from "./componentes/Time";
-import { times } from "./mock/times";
-import { Footer } from "./componentes/Footer";
-import "./App.css";
+import './App.css';
+
+import { useState } from 'react';
+
+import { v4 as uuidv4 } from 'uuid';
+
+import { Banner } from './componentes/Banner';
+import { Footer } from './componentes/Footer';
+import { Formulario } from './componentes/Formulario';
+import { Time } from './componentes/Time';
+import { times as defaultValueTimes } from './mock/times';
 
 function App() {
-  const [colaboradores, setColaboradores] = useState([]);
+  const [colaboradores, setColaboradores] = useState([
+    {
+      id: uuidv4(),
+      name: "Diana Rose",
+      cargo: "FullStack",
+      imagem: "https://github.com/DaiLobo.png",
+      time: "Programação",
+    },
+  ]);
+  const [times, setTimes] = useState(defaultValueTimes);
 
   const novoColaborador = (colaborador) => {
-    debugger;
+    // debugger;
     setColaboradores([...colaboradores, colaborador]);
+  };
+
+  const deletarColaborador = (id) => {};
+
+  const mudarCorDoTime = (id, cor) => {
+    setTimes(
+      times.map((time, index) => {
+        if (time.id === id) {
+          time.color = cor;
+        }
+        return time;
+      })
+    );
   };
 
   return (
     <>
-      <head>
-        <style>
-          @import
-          url('https://fonts.googleapis.com/css2?family=Montserrat&family=Prata&display=swap');
-        </style>
-      </head>
-
       <div className="App">
         <Banner />
 
@@ -42,12 +61,15 @@ function App() {
         {times?.map((time, index) => (
           <Time
             key={index}
+            id={time.id}
             nomeTime={time.nome}
-            primaryColor={time.primaryColor}
-            secondaryColor={time.secondaryColor}
+            // primaryColor={time.primaryColor}
+            color={time.color}
             colaboradores={colaboradores?.filter(
               (colaborador) => colaborador.time === time.nome
             )}
+            aoDeletar={deletarColaborador}
+            mudarCor={mudarCorDoTime}
           />
         ))}
       </div>

@@ -1,9 +1,13 @@
-import { useState } from "react";
-import { Button } from "../Button";
-import { CampoTexto } from "../CampoTexto";
-import { Select } from "../Select";
-import "./Formulario.css";
-import { times } from "../../mock/times";
+import './Formulario.css';
+
+import { useState } from 'react';
+
+import { v4 as uuidv4 } from 'uuid';
+
+import { times } from '../../mock/times';
+import { Button } from '../Button';
+import { CampoTexto } from '../CampoTexto';
+import { Select } from '../Select';
 
 export const Formulario = (props) => {
   const [name, setName] = useState("");
@@ -14,6 +18,7 @@ export const Formulario = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     props.aoColaborador({
+      id: uuidv4(),
       name,
       cargo,
       imagem,
