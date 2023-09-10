@@ -17,8 +17,20 @@ export const Formulario = (props) => {
   const [nomeTime, setNomeTime] = useState("");
   const [corTime, setCorTime] = useState("");
 
+  const [errorMessage, setErrorMessage] = useState(false);
+
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    const pattern = /^$|\.(jpe?g|png|gif|bmp)$/i;
+
+    if (!pattern.test(imagem)) {
+      setErrorMessage(true);
+      return;
+    }
+
+    setErrorMessage(false);
+
     props.aoColaborador({
       id: uuidv4(),
       name,
@@ -30,6 +42,12 @@ export const Formulario = (props) => {
     setCargo("");
     setImagem("");
     setTime("");
+
+    setTimeout(() => {
+      props.setShow(false);
+    }, [6000]);
+
+    props.setShow(true);
   };
 
   return (
@@ -56,6 +74,20 @@ export const Formulario = (props) => {
           label="Imagem"
           placeholder="Informe o endereço da imagem"
         />
+        {errorMessage && (
+          <div
+            style={{
+              color: "red",
+              marginTop: "-20px",
+              marginLeft: "25px",
+              fontSize: 14,
+            }}
+          >
+            Imagem inválida. Permito apenas os formatos jpeg, jpg, png, gif ou
+            bmp
+          </div>
+        )}
+
         <Select
           required
           label="Times"
@@ -71,6 +103,8 @@ export const Formulario = (props) => {
         onSubmit={(event) => {
           event.preventDefault();
           props.cadastrarTime({ nome: nomeTime, color: corTime });
+          setNomeTime("");
+          setCorTime("");
         }}
       >
         <h2>Preencha os dados para criar um novo time.</h2>

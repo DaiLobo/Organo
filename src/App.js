@@ -12,6 +12,7 @@ import { times as defaultValueTimes } from './mock/times';
 
 function App() {
   const [times, setTimes] = useState([...defaultValueTimes]);
+  const [show, setShow] = useState(false);
   const [colaboradores, setColaboradores] = useState([
     {
       id: uuidv4(),
@@ -36,6 +37,11 @@ function App() {
 
   const cadastrarTime = (novoTime) => {
     setTimes([...times, { ...novoTime, id: uuidv4() }]);
+
+    setTimeout(() => {
+      setShow(false);
+    }, [6000]);
+    setShow(true);
   };
 
   const mudarCorDoTime = (id, cor) => {
@@ -66,10 +72,11 @@ function App() {
         <Banner />
 
         <Formulario
+          setShow={setShow}
           cadastrarTime={cadastrarTime}
           times={times.map((time) => time.nome)}
           aoColaborador={(colaborador) => novoColaborador(colaborador)}
-          />
+        />
 
         {colaboradores?.length > 0 && (
           <section className="title">
@@ -82,13 +89,13 @@ function App() {
 
         {times?.map((time, index) => (
           <Time
-          key={index}
-          id={time.id}
-          nomeTime={time.nome}
-          // primaryColor={time.primaryColor}
-          color={time.color}
-          colaboradores={colaboradores?.filter(
-            (colaborador) => colaborador.time === time.nome
+            key={index}
+            id={time.id}
+            nomeTime={time.nome}
+            // primaryColor={time.primaryColor}
+            color={time.color}
+            colaboradores={colaboradores?.filter(
+              (colaborador) => colaborador.time === time.nome
             )}
             aoDeletar={deletarColaborador}
             mudarCor={mudarCorDoTime}
@@ -97,6 +104,9 @@ function App() {
         ))}
       </div>
 
+      <div className={`${show ? "show" : ""}`} id="snackbar">
+        Cadastrado com sucesso!
+      </div>
       <Footer />
     </>
   );
