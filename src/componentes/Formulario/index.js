@@ -72,7 +72,7 @@ export const Formulario = (props) => {
           value={imagem}
           setValue={setImagem}
           label="Imagem"
-          placeholder="Informe o endereço da imagem"
+          placeholder="Informe o endereço da imagem (Proporção 1:1)"
         />
         {errorMessage && (
           <div
