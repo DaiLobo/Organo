@@ -4,7 +4,7 @@
 <hr/>
 
 <h4 align="center"> 
-	📌 Concluído
+	📌 Concluído: <a href="https://organo-flame-six.vercel.app">Organo</a>
 </h4>
 
 ## 📝 Sobre
@@ -23,7 +23,7 @@ Este é um projeto em React para organizar colaboradores em seus respectivos tim
  <a href="#-executando-o-projeto">Executando o Projeto</a> • 
  <a href="#-funcionalidades-do-projeto">Funcionalidades do projeto</a> • 
  <a href="#-tecnologias">Tecnologias</a> • 
- <a href="#%EF%B8%8F-autor">Autor</a>
+ <a href="#%EF%B8%8F-autora">Autora</a>
 </p>
 
 ## 📋&nbsp; Pré-requisitos
@@ -66,6 +66,17 @@ Abaixo dos formulários, você encontrará uma seção onde os colaboradores sã
 
 Além disso existe um botão na parte de "Minha Organização" que tem a ação de ocultar os formulários, caso queira ver somente as organizações.
 
+### Cadastro Colaborador
+<div align="center">
+  <img src="https://github.com/DaiLobo/Organo/assets/47689708/9ba4217a-a76c-40a4-a432-ba27e86d28a3" alt="Cadastro Colaborador">
+</div>
+
+### Cadastro Time
+<div align="center">
+  <img src="https://github.com/DaiLobo/Organo/assets/47689708/ae199f55-1f4e-430a-8f78-a03e784d777e" alt="Cadastro Time">
+</div>
+
+
 ## 🛠 Tecnologias
 <div align="center">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="40" width="52" alt="react logo"  />
@@ -75,5 +86,5 @@ Além disso existe um botão na parte de "Minha Organização" que tem a ação 
 </div>
 <hr/>
 
-## ✒️ Autor
+## ✒️ Autora
 Desenvolvido com 💜 por Diana Rose
