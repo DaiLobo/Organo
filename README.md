@@ -1,38 +1,79 @@
-# Getting Started with Create React App
+<div align="center">
+  <img src="https://github.com/DaiLobo/Organo/assets/47689708/3211de26-8487-4483-abb1-5fe746e64761" alt="Organo">
+</div>
+<hr/>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h4 align="center"> 
+	📌 Concluído
+</h4>
 
-## Available Scripts
+## 📝 Sobre
 
-In the project directory, you can run:
+Este é um projeto em React para organizar colaboradores em seus respectivos times. Com esta aplicação, você pode facilmente adicionar, visualizar, editar e excluir colaboradores e criar, editar e excluir times. 
 
-### `yarn start`
+<div align="center">
+  <img src="https://github.com/DaiLobo/Organo/assets/47689708/bb2e06f8-bb5d-40d0-99c3-f6a5825a9ced" alt="Telas">
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## :bookmark: Índice
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<p align="center">
+ <a href="#-pré-requisitos">Pré-requisitos</a> •
+ <a href="#-instalação">Instalação</a> • 
+ <a href="#-executando-o-projeto">Executando o Projeto</a> • 
+ <a href="#-funcionalidades-do-projeto">Funcionalidades do projeto</a> • 
+ <a href="#-tecnologias">Tecnologias</a> • 
+ <a href="#%EF%B8%8F-autor">Autor</a>
+</p>
 
-### `yarn test`
+## 📋&nbsp; Pré-requisitos
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
+Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
-### `yarn build`
+## 🔧 Instalação
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+# Clone este repositório
+$ git clone https://github.com/seu-usuario/Organo.git
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Acesse a pasta do projeto no terminal/cmd
+$ cd organo
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Instale as dependências
+$ yarn
+```
 
-### Deployment
+## 🍷 Executando o Projeto
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+yarn start
+```
+A aplicação estará disponível em http://localhost:3000.
 
-### `yarn build` fails to minify
+<hr/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🔨 Funcionalidades do projeto
+
+Ao iniciar a aplicação, você será apresentado a dois formulários distintos: um para o cadastro de colaboradores e outro para o cadastro de times.
+
+Para adicionar um colaborador, preencha o formulário com todas as informações necessárias. Note que todos os campos são obrigatórios, exceto o campo de imagem. Caso você não insira uma imagem, o colaborador será cadastrado com uma imagem padrão. Depois de preencher os detalhes, clique no botão "Cadastrar" para concluir o processo.
+
+Para adicionar um novo time, preencha o formulário com as informações específicas do time desejado e clique em "Cadastrar". Após essa ação, o novo time será exibido na lista de times, que pode ser visto no formulário de colaboradores.
+
+Abaixo dos formulários, você encontrará uma seção onde os colaboradores são agrupados por time. Neste espaço, você terá a opção de realizar diversas ações, como alterar a cor de um time, favoritar colaboradores e excluir colaboradores. Importante destacar que, se todos os colaboradores de um time forem excluídos, o time deixará de ser exibido na lista de times.
+
+Além disso existe um botão na parte de "Minha Organização" que tem a ação de ocultar os formulários, caso queira ver somente as organizações.
+
+## 🛠 Tecnologias
+<div align="center">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="40" width="52" alt="react logo"  />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" height="40" width="52" alt="figma logo"   />        
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" height="40" width="52" alt="git logo"  />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" height="40" width="52" alt="github logo" />                                   
+</div>
+<hr/>
+
+## ✒️ Autor
+Desenvolvido com 💜 por Diana Rose
