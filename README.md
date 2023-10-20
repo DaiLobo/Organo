@@ -1,15 +1,16 @@
 <div align="center">
   <img src="https://github.com/DaiLobo/Organo/assets/47689708/3211de26-8487-4483-abb1-5fe746e64761" alt="Organo">
 </div>
-<hr/>
 
 <h4 align="center"> 
-	📌 Concluído: <a href="https://organo-flame-six.vercel.app">Organo</a>
+	📌 Concluído: Acesse o projeto <a href="https://organo-flame-six.vercel.app">Organo</a>
 </h4>
 
 ## 📝 Sobre
 
 Este é um projeto em React para organizar colaboradores em seus respectivos times. Com esta aplicação, você pode facilmente adicionar, visualizar, editar e excluir colaboradores e criar, editar e excluir times. 
+
+<br>
 
 <div align="center">
   <img src="https://github.com/DaiLobo/Organo/assets/47689708/bb2e06f8-bb5d-40d0-99c3-f6a5825a9ced" alt="Telas">
@@ -17,6 +18,7 @@ Este é um projeto em React para organizar colaboradores em seus respectivos tim
 
 ## :bookmark: Índice
 
+<br>
 <p align="center">
  <a href="#-pré-requisitos">Pré-requisitos</a> •
  <a href="#-instalação">Instalação</a> • 
@@ -25,6 +27,7 @@ Este é um projeto em React para organizar colaboradores em seus respectivos tim
  <a href="#-tecnologias">Tecnologias</a> • 
  <a href="#%EF%B8%8F-autora">Autora</a>
 </p>
+<br>
 
 ## 📋&nbsp; Pré-requisitos
 
@@ -76,6 +79,7 @@ Além disso existe um botão na parte de "Minha Organização" que tem a ação 
   <img src="https://github.com/DaiLobo/Organo/assets/47689708/ae199f55-1f4e-430a-8f78-a03e784d777e" alt="Cadastro Time">
 </div>
 
+<hr/>
 
 ## 🛠 Tecnologias
 <div align="center">
